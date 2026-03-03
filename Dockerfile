@@ -1,5 +1,3 @@
-here's my theory,  i took the docker file from a deployed project probabbly its the one misbehaving:
-
 # Build stage: Node.js app
 FROM node:16-alpine AS build-stage
 WORKDIR /app
