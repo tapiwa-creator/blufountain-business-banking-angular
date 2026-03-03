@@ -104,7 +104,6 @@ COPY nginx/nginx.conf /etc/nginx/nginx.conf
 COPY nginx/nginx.dev.common /etc/nginx/conf.d/nginx.common
 
 # Copy SSL cer
-tificates (if they exist)
 # Note: When using the wildcard trick, the destination must be a directory (ending in /).
 COPY nginx/cert.pe[m] /etc/nginx/ssl/
 COPY nginx/key.pe[m] /etc/nginx/ssl/
