@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: blufountain-business-banking-angular-container
-          image: kaributechsworkflow/blufountain-business-banking-angular:61f2f2d71d91dcc50f40a2efce2fe834cbadaedf
+          image: kaributechsworkflow/blufountain-business-banking-angular:844faa5b865c6949fad33742348a5e98f40521af
           ports:
             - containerPort: 8443
           env:
