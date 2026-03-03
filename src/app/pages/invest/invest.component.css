@@ -1,7 +1,8 @@
 .page-container {
     padding: 3rem 0 5rem;
-    background: var(--bg-light);
+    background: var(--bg-main);
     min-height: 80vh;
+    transition: background-color 0.3s ease;
 }
 
 .header-section {
@@ -14,12 +15,12 @@
 .page-title {
     font-size: 2.2rem;
     font-weight: 500;
-    color: var(--bg-dark);
+    color: var(--text-primary);
     margin-bottom: 0.5rem;
 }
 
 .page-subtitle {
-    color: var(--text-gray-light);
+    color: var(--text-muted);
     font-size: 1.05rem;
 }
 
@@ -38,7 +39,7 @@
 
 .action-btn.primary {
     background: var(--primary-gold);
-    color: var(--bg-dark);
+    color: var(--text-primary);
     border: none;
 }
 
@@ -48,8 +49,8 @@
 
 .action-btn.secondary {
     background: transparent;
-    color: var(--bg-dark);
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
 }
 
 .action-btn.secondary:hover {
@@ -65,7 +66,7 @@
 
 .section-heading {
     font-size: 1.4rem;
-    color: var(--bg-dark);
+    color: var(--text-primary);
     margin: 0;
 }
 
@@ -148,22 +149,23 @@
 }
 
 .stat-box {
-    background: white;
+    background: var(--bg-card);
     padding: 1.5rem;
     border-radius: var(--radius-lg);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transition: background-color 0.3s ease;
 }
 
 .stat-box .label {
-    color: var(--text-gray-light);
+    color: var(--text-muted);
 }
 
 .stat-val {
     font-size: 1.5rem;
-    color: var(--bg-dark);
+    color: var(--text-primary);
     margin: 0.5rem 0 0.25rem;
 }
 
@@ -173,7 +175,7 @@
 
 .caption {
     font-size: 0.75rem;
-    color: var(--text-gray-light);
+    color: var(--text-muted);
 }
 
 /* Holdings Table */
@@ -182,11 +184,11 @@
 }
 
 .holdings-table-wrapper {
-    background: white;
+    background: var(--bg-card);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
     overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
 }
 
 .holdings-table {
@@ -196,20 +198,20 @@
 }
 
 .holdings-table th {
-    background: rgba(0, 0, 0, 0.02);
+    background: var(--bg-main);
     padding: 1rem 1.5rem;
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--text-gray-dark);
+    color: var(--text-secondary);
     text-transform: uppercase;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .holdings-table td {
     padding: 1.25rem 1.5rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--border-color);
     font-size: 0.9rem;
-    color: var(--bg-dark);
+    color: var(--text-primary);
     vertical-align: middle;
 }
 
@@ -218,7 +220,7 @@
 }
 
 .holdings-table tr:hover {
-    background: rgba(0, 0, 0, 0.01);
+    background: var(--bg-main);
 }
 
 .asset-name {
@@ -227,11 +229,11 @@
 }
 
 .class-badge {
-    background: rgba(0, 0, 0, 0.05);
+    background: var(--border-color);
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 0.75rem;
-    color: var(--text-gray-dark);
+    color: var(--text-secondary);
 }
 
 .text-right {
@@ -276,11 +278,11 @@ th.text-right {
 }
 
 .status-indicator.locked {
-    color: var(--text-gray-dark);
+    color: var(--text-secondary);
 }
 
 .status-indicator.locked::before {
-    background: var(--text-gray-dark);
+    background: var(--text-secondary);
 }
 
 /* Opportunities */
@@ -291,14 +293,14 @@ th.text-right {
 }
 
 .opp-card {
-    background: white;
+    background: var(--bg-card);
     border-radius: var(--radius-lg);
     padding: 2rem;
     box-shadow: var(--shadow-sm);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.3s ease;
 }
 
 .opp-card:hover {
@@ -346,7 +348,7 @@ th.text-right {
 
 .opp-card h4 {
     font-size: 1.25rem;
-    color: var(--bg-dark);
+    color: var(--text-primary);
     margin-bottom: 1.5rem;
 }
 
@@ -355,7 +357,7 @@ th.text-right {
     gap: 1rem;
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .opp-stat {
@@ -367,14 +369,14 @@ th.text-right {
 
 .opp-label {
     font-size: 0.75rem;
-    color: var(--text-gray-light);
+    color: var(--text-muted);
     text-transform: uppercase;
 }
 
 .opp-val {
     font-size: 1.1rem;
     font-weight: 500;
-    color: var(--bg-dark);
+    color: var(--text-primary);
 }
 
 .btn-outline-gold {

@@ -1,7 +1,8 @@
 .dashboard-container {
     padding: 2rem 0 4rem;
-    background: var(--bg-light);
+    background: var(--bg-main);
     min-height: 80vh;
+    transition: background-color 0.3s ease;
 }
 
 .welcome-section {
@@ -15,6 +16,7 @@
     font-size: 2.2rem;
     font-weight: 600;
     margin: 0;
+    color: var(--text-primary);
 }
 
 .dashboard-brand {
@@ -29,8 +31,7 @@
 }
 
 .brand-blu {
-    color: var(--bg-dark);
-    /* Matches the 'Business' text color */
+    color: var(--text-primary);
 }
 
 .brand-fountain {
@@ -43,17 +44,17 @@
 }
 
 .welcome-text p {
-    color: var(--text-gray-light);
+    color: var(--text-muted);
 }
 
 .calendar-chip {
-    background: white;
+    background: var(--bg-card);
     padding: .5rem 1rem;
     border-radius: 8px;
     font-size: .85rem;
-    color: var(--text-gray-dark);
+    color: var(--text-secondary);
     box-shadow: var(--shadow-sm);
-    border: 1px solid rgba(0, 0, 0, .05);
+    border: 1px solid var(--border-color);
 }
 
 .summary-grid {
@@ -74,7 +75,7 @@
 .section-title {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--bg-dark);
+    color: var(--text-primary);
 }
 
 .view-all-link {

@@ -59,7 +59,7 @@
                     <tr *ngFor="let item of activeInvestments">
                         <td class="font-outfit asset-name">{{ item.name }}</td>
                         <td><span class="class-badge">{{ item.type }}</span></td>
-                        <td class="font-outfit text-right amount-col">{{ item.balance }}</td>
+                        <td class="font-outfit text-right amount-col">$ {{ item.balance }}</td>
                         <td class="font-outfit rate-col">{{ item.rate }}</td>
                         <td>{{ item.maturity }}</td>
                         <td><span class="status-indicator" [ngClass]="item.status.toLowerCase()">{{ item.status

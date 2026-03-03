@@ -1,7 +1,7 @@
 .account-card {
     border-radius: var(--radius-lg);
     padding: 1.75rem;
-    color: var(--text-white);
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -116,12 +116,12 @@
 }
 
 .action-btn.primary {
-    background: var(--text-white);
-    color: var(--bg-dark);
+    background: #ffffff;
+    color: #1e293b;
 }
 
 .action-btn.secondary {
     background: rgba(255, 255, 255, 0.1);
-    color: var(--text-white);
+    color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }

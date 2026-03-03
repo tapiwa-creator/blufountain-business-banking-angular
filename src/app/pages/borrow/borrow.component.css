@@ -1,7 +1,8 @@
 .page-container {
     padding: 3rem 0 5rem;
-    background: var(--bg-light);
+    background: var(--bg-main);
     min-height: 80vh;
+    transition: background-color 0.3s ease;
 }
 
 .header-section {
@@ -14,12 +15,12 @@
 .page-title {
     font-size: 2.2rem;
     font-weight: 500;
-    color: var(--bg-dark);
+    color: var(--text-primary);
     margin-bottom: 0.5rem;
 }
 
 .page-subtitle {
-    color: var(--text-gray-light);
+    color: var(--text-muted);
     font-size: 1.05rem;
 }
 
@@ -38,7 +39,7 @@
 
 .action-btn.primary {
     background: var(--primary-gold);
-    color: var(--bg-dark);
+    color: var(--text-primary);
     border: none;
 }
 
@@ -48,8 +49,8 @@
 
 .action-btn.secondary {
     background: transparent;
-    color: var(--bg-dark);
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
 }
 
 .action-btn.secondary:hover {
@@ -102,7 +103,7 @@
 
 .btn-gold {
     background: var(--primary-gold);
-    color: var(--bg-dark);
+    color: var(--text-primary);
     padding: 0.85rem 1.5rem;
     border: none;
     font-weight: 600;
@@ -124,7 +125,7 @@
 
 .section-heading {
     font-size: 1.4rem;
-    color: var(--bg-dark);
+    color: var(--text-primary);
     margin: 0;
 }
 
@@ -137,14 +138,14 @@
 }
 
 .product-card {
-    background: white;
+    background: var(--bg-card);
     border-radius: var(--radius-lg);
     padding: 2rem;
     box-shadow: var(--shadow-sm);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 }
@@ -176,11 +177,11 @@
 
 .product-header h4 {
     font-size: 1.25rem;
-    color: var(--bg-dark);
+    color: var(--text-primary);
 }
 
 .product-desc {
-    color: var(--text-gray-dark);
+    color: var(--text-secondary);
     font-size: 0.9rem;
     line-height: 1.5;
     margin-bottom: 1.5rem;
@@ -189,7 +190,7 @@
 
 .limits-box {
     display: flex;
-    background: var(--bg-light);
+    background: var(--bg-main);
     border-radius: 8px;
     padding: 1rem;
     margin-bottom: 1.5rem;
@@ -203,20 +204,20 @@
 
 .limit-label {
     font-size: 0.7rem;
-    color: var(--text-gray-light);
+    color: var(--text-muted);
     text-transform: uppercase;
     margin-bottom: 0.2rem;
 }
 
 .limit-value {
     font-size: 1.1rem;
-    color: var(--bg-dark);
+    color: var(--text-primary);
     font-weight: 500;
 }
 
 .divider {
     width: 1px;
-    background: rgba(0, 0, 0, 0.1);
+    background: var(--border-color);
     margin: 0 1rem;
 }
 
@@ -232,7 +233,7 @@
     align-items: flex-start;
     gap: 0.75rem;
     font-size: 0.85rem;
-    color: var(--text-gray-dark);
+    color: var(--text-secondary);
     margin-bottom: 0.75rem;
     line-height: 1.4;
 }
@@ -260,8 +261,8 @@
 
 .btn-product.outline {
     background: transparent;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
 }
 
 .btn-product.outline:hover {
@@ -270,24 +271,24 @@
 }
 
 .btn-product.solid {
-    background: var(--bg-dark);
-    color: white;
-    border: 1px solid var(--bg-dark);
+    background: var(--text-primary);
+    color: var(--bg-card);
+    border: 1px solid var(--text-primary);
 }
 
 .btn-product.solid:hover {
     background: var(--primary-gold);
     border-color: var(--primary-gold);
-    color: var(--bg-dark);
+    color: var(--text-primary);
 }
 
 /* Apps Panel */
 .apps-panel {
-    background: white;
+    background: var(--bg-card);
     border-radius: var(--radius-lg);
     padding: 2rem;
     box-shadow: var(--shadow-sm);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
 }
 
 .app-cards {
@@ -302,14 +303,14 @@
     align-items: center;
     justify-content: space-between;
     padding: 1.25rem;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
-    transition: background 0.2s;
+    transition: all 0.2s;
 }
 
 .app-row:hover {
-    background: var(--bg-light);
-    border-color: rgba(212, 175, 55, 0.2);
+    background: var(--bg-main);
+    border-color: var(--primary-gold);
 }
 
 .app-info {
@@ -321,19 +322,19 @@
 
 .app-info h4 {
     font-size: 1.1rem;
-    color: var(--bg-dark);
+    color: var(--text-primary);
 }
 
 .app-ref {
     font-size: 0.8rem;
-    color: var(--text-gray-light);
+    color: var(--text-muted);
 }
 
 .app-amount {
     flex: 1;
     font-size: 1.2rem;
     font-weight: 500;
-    color: var(--bg-dark);
+    color: var(--text-primary);
     text-align: right;
     margin-right: 2rem;
 }
@@ -363,7 +364,7 @@
 .btn-icon {
     background: transparent;
     border: none;
-    color: var(--text-gray-light);
+    color: var(--text-muted);
     cursor: pointer;
     padding: 0.5rem;
     transition: color 0.2s;

@@ -1,31 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Color Palette */
-  --bg-dark: #0a0e14;
-  --bg-dark-secondary: #141b25;
-  --bg-light: #f8fafc;
-  --text-white: #ffffff;
-  --text-gray-light: #94a3b8;
-  --text-gray-dark: #475569;
+  /* Common Palette */
   --primary-gold: #d4af37;
   --primary-gold-light: #f1e5ac;
-  
-  /* Status Colors */
+
+  /* Status Colors (Same for both themes for clarity) */
   --status-pending: #818cf8;
   --status-success: #10b981;
   --status-warning: #f59e0b;
   --status-danger: #ef4444;
-  
-  /* Gradients */
-  --grad-blue: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  --grad-green: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
-  --grad-purple: linear-gradient(135deg, #312e81 0%, #4338ca 100%);
-  
+
   /* Spacing & Borders */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 20px;
+
+  /* Gradients */
+  --grad-blue: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --grad-green: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+  --grad-purple: linear-gradient(135deg, #312e81 0%, #4338ca 100%);
+}
+
+.light-theme {
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-nav: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border-color: rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --grad-nav: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  /* Keeps top nav dark in light mode if that was intended, but let's make it flexible */
+}
+
+.dark-theme {
+  --bg-main: #0a0e14;
+  --bg-card: #141b25;
+  --bg-nav: #141b25;
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5);
+}
+
+/* Fallback/Default (Light Theme) */
+:root {
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-nav: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border-color: rgba(0, 0, 0, 0.05);
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
@@ -38,13 +69,18 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--bg-light);
-  color: var(--text-gray-dark);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h1, h2, h3, h4, .font-outfit {
+h1,
+h2,
+h3,
+h4,
+.font-outfit {
   font-family: 'Outfit', sans-serif;
 }
 

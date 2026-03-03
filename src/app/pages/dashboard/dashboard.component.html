@@ -39,7 +39,7 @@
         </div>
         <div class="accounts-grid">
             <app-account-card *ngFor="let acc of accounts" [accountType]="acc.type" [accountName]="acc.name"
-                [accountNumber]="acc.number" [balance]="acc.balance" [currency]="acc.currency || 'R'" [tag]="acc.tag"
+                [accountNumber]="acc.number" [balance]="acc.balance" [currency]="acc.currency || '$'" [tag]="acc.tag"
                 [variant]="acc.variant">
             </app-account-card>
         </div>

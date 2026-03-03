@@ -1,8 +1,9 @@
 .top-nav {
-    background-color: var(--bg-dark);
-    color: var(--text-white);
+    background-color: var(--bg-nav);
+    color: var(--text-primary);
     padding: 0.75rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .nav-content {
@@ -35,7 +36,7 @@
 }
 
 .brand-blu {
-    color: #ffffff;
+    color: var(--text-primary);
 }
 
 .brand-fountain {
@@ -49,7 +50,7 @@
 }
 
 .nav-link {
-    color: var(--text-gray-light);
+    color: var(--text-muted);
     font-size: 0.9rem;
     font-weight: 500;
     transition: color 0.2s;
@@ -67,8 +68,29 @@
     gap: 1.25rem;
 }
 
+.theme-toggle-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-sm);
+}
+
+.theme-toggle-btn:hover {
+    transform: rotate(15deg) scale(1.1);
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
 .icon-btn {
-    color: var(--text-gray-light);
+    color: var(--text-muted);
     font-size: 1.2rem;
     position: relative;
     display: flex;
@@ -90,17 +112,18 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--bg-card);
     padding: 0.4rem 1rem;
     border-radius: 20px;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
 }
 
 .avatar {
     width: 24px;
     height: 24px;
     background-color: var(--primary-gold);
-    color: var(--bg-dark);
+    color: #ffffff;
     border-radius: 50%;
     font-size: 0.7rem;
     font-weight: 700;
@@ -112,17 +135,24 @@
 .user-name {
     font-size: 0.85rem;
     font-weight: 500;
-    color: var(--primary-gold);
+    color: var(--text-secondary);
 }
 
 .sign-out-btn {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: var(--text-white);
+    background-color: var(--bg-card);
+    color: var(--text-primary);
     padding: 0.4rem 1rem;
     border-radius: 6px;
     font-size: 0.85rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.sign-out-btn:hover {
+    background-color: var(--status-danger);
+    color: white;
+    border-color: var(--status-danger);
 }

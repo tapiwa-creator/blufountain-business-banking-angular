@@ -1,7 +1,8 @@
 .page-container {
     padding: 3rem 0 5rem;
-    background: var(--bg-light);
+    background: var(--bg-main);
     min-height: 80vh;
+    transition: background-color 0.3s ease;
 }
 
 .header-section {
@@ -14,12 +15,12 @@
 .page-title {
     font-size: 2.2rem;
     font-weight: 500;
-    color: var(--bg-dark);
+    color: var(--text-primary);
     margin-bottom: 0.5rem;
 }
 
 .page-subtitle {
-    color: var(--text-gray-light);
+    color: var(--text-muted);
     font-size: 1.05rem;
 }
 
@@ -38,7 +39,7 @@
 
 .action-btn.primary {
     background: var(--primary-gold);
-    color: var(--bg-dark);
+    color: var(--text-primary);
     border: none;
 }
 
@@ -48,8 +49,8 @@
 
 .action-btn.secondary {
     background: transparent;
-    color: var(--bg-dark);
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
 }
 
 .action-btn.secondary:hover {
@@ -65,7 +66,7 @@
 
 .section-heading {
     font-size: 1.3rem;
-    color: var(--bg-dark);
+    color: var(--text-primary);
     margin: 0;
 }
 
@@ -109,12 +110,12 @@
 }
 
 .rate-card {
-    background: white;
+    background: var(--bg-card);
     padding: 1.5rem;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
-    border: 1px solid rgba(0, 0, 0, 0.04);
-    transition: transform 0.2s;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
 }
 
 .rate-card:hover {
@@ -134,12 +135,12 @@
     display: block;
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--bg-dark);
+    color: var(--text-primary);
 }
 
 .currency-name {
     font-size: 0.75rem;
-    color: var(--text-gray-light);
+    color: var(--text-muted);
 }
 
 .trend {
@@ -163,8 +164,8 @@
 }
 
 .trend.flat {
-    background: rgba(0, 0, 0, 0.05);
-    color: var(--text-gray-dark);
+    background: var(--border-color);
+    color: var(--text-secondary);
 }
 
 .rate-body {
@@ -180,7 +181,7 @@
 
 .rate-label {
     font-size: 0.7rem;
-    color: var(--text-gray-light);
+    color: var(--text-muted);
     text-transform: uppercase;
     margin-bottom: 0.25rem;
 }
@@ -188,13 +189,13 @@
 .rate-value {
     font-size: 1.4rem;
     font-weight: 500;
-    color: var(--bg-dark);
+    color: var(--text-primary);
 }
 
 .rate-divider {
     width: 1px;
     height: 30px;
-    background: rgba(0, 0, 0, 0.1);
+    background: var(--border-color);
 }
 
 /* Layout Grid */
@@ -206,11 +207,11 @@
 
 /* Table */
 .history-table-container {
-    background: white;
+    background: var(--bg-card);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
     overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
 }
 
 .history-table {
@@ -220,19 +221,19 @@
 }
 
 .history-table th {
-    background: rgba(0, 0, 0, 0.02);
+    background: var(--bg-main);
     padding: 1rem 1.5rem;
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--text-gray-dark);
+    color: var(--text-secondary);
     text-transform: uppercase;
 }
 
 .history-table td {
     padding: 1.25rem 1.5rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--border-color);
     font-size: 0.9rem;
-    color: var(--bg-dark);
+    color: var(--text-primary);
     vertical-align: middle;
 }
 
@@ -246,7 +247,7 @@
 
 .date-sub {
     font-size: 0.75rem;
-    color: var(--text-gray-light);
+    color: var(--text-muted);
     font-weight: 400;
 }
 
@@ -263,8 +264,8 @@
 }
 
 .badge.type {
-    background: rgba(0, 0, 0, 0.05);
-    color: var(--text-gray-dark);
+    background: var(--border-color);
+    color: var(--text-secondary);
 }
 
 .badge.status.settled {
@@ -279,11 +280,11 @@
 
 /* Side Panel */
 .treasury-card {
-    background: white;
+    background: var(--bg-card);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
     padding: 1.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -294,7 +295,7 @@
     align-items: center;
     gap: 1rem;
     padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .treasury-item:last-of-type {
@@ -330,12 +331,12 @@
 .treasury-info span:first-child {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--bg-dark);
+    color: var(--text-primary);
 }
 
 .balance {
     font-size: 0.85rem;
-    color: var(--text-gray-dark);
+    color: var(--text-secondary);
     margin-top: 0.2rem;
 }
 
@@ -353,7 +354,7 @@
 }
 
 .action-box {
-    background: rgba(212, 175, 55, 0.05);
+    background: var(--bg-nav);
     padding: 1.25rem;
     border-radius: 8px;
     margin-top: 0.5rem;
@@ -361,13 +362,13 @@
 
 .action-box h4 {
     font-size: 0.95rem;
-    color: var(--bg-dark);
+    color: var(--text-primary);
     margin-bottom: 0.5rem;
 }
 
 .action-box p {
     font-size: 0.85rem;
-    color: var(--text-gray-dark);
+    color: var(--text-secondary);
     margin-bottom: 1rem;
     line-height: 1.4;
 }

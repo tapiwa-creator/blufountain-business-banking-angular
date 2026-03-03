@@ -1,8 +1,9 @@
 .dashboard-container {
     padding-top: 2rem;
     padding-bottom: 4rem;
-    background-color: var(--bg-light);
+    background-color: var(--bg-main);
     min-height: 80vh;
+    transition: background-color 0.3s ease;
 }
 
 .welcome-section {
@@ -15,7 +16,7 @@
 .welcome-text h1 {
     font-size: 2rem;
     font-weight: 500;
-    color: var(--bg-dark);
+    color: var(--text-primary);
 }
 
 .diamond {
@@ -25,21 +26,22 @@
 }
 
 .welcome-text p {
-    color: var(--text-gray-light);
+    color: var(--text-muted);
     font-size: 1rem;
 }
 
 .calendar-chip {
-    background: white;
+    background: var(--bg-card);
     padding: 0.5rem 1rem;
     border-radius: 8px;
     font-size: 0.85rem;
-    color: var(--text-gray-dark);
+    color: var(--text-secondary);
     box-shadow: var(--shadow-sm);
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
 }
 
 .summary-grid {
@@ -60,7 +62,7 @@
 .section-title {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--bg-dark);
+    color: var(--text-primary);
 }
 
 .view-all-link {

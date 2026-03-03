@@ -6,7 +6,7 @@
 }
 
 .action-item {
-    background: var(--text-white);
+    background: var(--bg-card);
     padding: 1.5rem 1rem;
     border-radius: var(--radius-md);
     display: flex;
@@ -16,7 +16,7 @@
     cursor: pointer;
     transition: all 0.2s ease;
     box-shadow: var(--shadow-sm);
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--border-color);
 }
 
 .action-item:hover {
@@ -38,7 +38,7 @@
 .action-name {
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--text-gray-dark);
+    color: var(--text-secondary);
     text-align: center;
 }
 

@@ -1,9 +1,11 @@
 .list-container {
-    background: var(--text-white);
+    background: var(--bg-card);
     border-radius: var(--radius-md);
     padding: 1.5rem;
     box-shadow: var(--shadow-sm);
     height: 100%;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease;
 }
 
 .list-header {
@@ -16,7 +18,7 @@
 .list-header h3 {
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--bg-dark);
+    color: var(--text-primary);
 }
 
 .view-all {
@@ -36,7 +38,7 @@
     justify-content: space-between;
     align-items: center;
     padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .transaction-item:last-child {
@@ -73,13 +75,13 @@
 .date-day {
     font-size: 1rem;
     font-weight: 700;
-    color: var(--bg-dark);
+    color: var(--text-primary);
 }
 
 .date-month {
     font-size: 0.65rem;
     font-weight: 600;
-    color: var(--text-gray-light);
+    color: var(--text-muted);
     text-transform: uppercase;
 }
 
@@ -91,12 +93,12 @@
 .item-name {
     font-size: 0.95rem;
     font-weight: 600;
-    color: var(--bg-dark);
+    color: var(--text-primary);
 }
 
 .item-meta {
     font-size: 0.75rem;
-    color: var(--text-gray-light);
+    color: var(--text-muted);
 }
 
 .item-trailing {
