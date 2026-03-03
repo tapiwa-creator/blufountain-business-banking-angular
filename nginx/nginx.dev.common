@@ -1,0 +1,7 @@
+ location /api {
+        proxy_pass http://20.164.18.94:30450;
+        proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504;
+        proxy_buffering off;
+        proxy_set_header Connection "keep-alive";
+        
+    }

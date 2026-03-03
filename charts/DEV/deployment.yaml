@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blufountain-business-banking-angular-deployment
+  namespace: blufountain
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: blufountain-business-banking-angular
+  template:
+    metadata:
+      labels:
+        app: blufountain-business-banking-angular
+    spec:
+      containers:
+        - name: blufountain-business-banking-angular-container
+          image: kaributechsworkflow/blufountain-business-banking-angular:61f2f2d71d91dcc50f40a2efce2fe834cbadaedf
+          ports:
+            - containerPort: 8443
+          env:
+            - name: PORT
+              value: "8443"
+            - name: HTTP_PORT
+              value: "3050"
