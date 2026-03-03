@@ -1,5 +1,5 @@
 # Build stage: Angular app
-FROM node:18-alpine AS build-stage
+FROM node:20-alpine AS build-stage
 WORKDIR /app
 ENV NODE_OPTIONS="--max-old-space-size=8192"
 COPY package.json package-lock.json* ./
