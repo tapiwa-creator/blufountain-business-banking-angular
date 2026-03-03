@@ -1,0 +1,12 @@
+<div class="summary-card" [ngClass]="statusColor">
+    <div class="card-header">
+        <span class="card-title font-outfit">{{ title | uppercase }}</span>
+        <div class="card-icon-wrapper" [ngClass]="statusColor">
+            <i [class]="icon"></i>
+        </div>
+    </div>
+    <div class="card-content">
+        <h2 class="card-amount font-outfit">R {{ amount }}</h2>
+        <span class="card-subtitle">{{ subtitle }}</span>
+    </div>
+</div>

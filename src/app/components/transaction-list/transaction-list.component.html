@@ -1,0 +1,37 @@
+<div class="list-container">
+    <div class="list-header">
+        <h3 class="font-outfit">{{ title }}</h3>
+        <a href="#" class="view-all">View all <i class="icon-chevron-right"></i></a>
+    </div>
+
+    <div class="items-list">
+        <div class="transaction-item" *ngFor="let item of items">
+            <div class="item-leading">
+                <div class="avatar-circle" [style.color]="item.color" [style.background-color]="item.color + '15'">
+                    {{ item.initials }}
+                </div>
+                <div class="item-info" *ngIf="type === 'recent'">
+                    <span class="item-name font-outfit">{{ item.name }}</span>
+                    <span class="item-meta">{{ item.meta }}</span>
+                </div>
+                <div class="item-date-box" *ngIf="type === 'upcoming'">
+                    <span class="date-day">{{ item.day }}</span>
+                    <span class="date-month">{{ item.month }}</span>
+                </div>
+                <div class="item-info" *ngIf="type === 'upcoming'">
+                    <span class="item-name font-outfit">{{ item.name }}</span>
+                    <span class="item-meta">{{ item.category }}</span>
+                </div>
+            </div>
+
+            <div class="item-trailing">
+                <span class="amount font-outfit" [class.negative]="item.amount.startsWith('-')">
+                    {{ item.amount }}
+                </span>
+                <span class="status-tag" [ngClass]="item.status?.toLowerCase()">
+                    {{ item.status || item.type }}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

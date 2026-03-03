@@ -1,0 +1,26 @@
+<div class="account-card" [ngClass]="variant">
+    <div class="card-header">
+        <div class="account-info">
+            <span class="account-type font-outfit">{{ accountType | uppercase }}</span>
+            <h3 class="account-name font-outfit">{{ accountName }}</h3>
+            <span class="account-number">{{ accountNumber }}</span>
+        </div>
+        <div class="card-tag" *ngIf="tag">
+            {{ tag }}
+        </div>
+    </div>
+
+    <div class="card-body">
+        <span class="balance-label">Available Balance</span>
+        <h2 class="balance-amount font-outfit">
+            <span class="currency">{{ currency }}</span> {{ balance }}
+        </h2>
+    </div>
+
+    <div class="card-footer">
+        <button class="action-btn primary" *ngIf="variant === 'blue'">$ Pay</button>
+        <button class="action-btn primary" *ngIf="variant === 'purple'"><i></i> FX Transfer</button>
+        <button class="action-btn secondary"><i></i> Transfer</button>
+        <button class="action-btn secondary"><i></i> Statement</button>
+    </div>
+</div>

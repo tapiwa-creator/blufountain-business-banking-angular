@@ -1,0 +1,111 @@
+<main class="page-container">
+    <section class="container header-section">
+        <div>
+            <h1 class="font-outfit page-title">FX & Forex</h1>
+            <p class="page-subtitle">Manage cross-border payments, exchange rates, and global liquidity.</p>
+        </div>
+        <div class="header-actions">
+            <button class="action-btn secondary">View Global Accounts</button>
+            <button class="action-btn primary">Book a Trade</button>
+        </div>
+    </section>
+
+    <section class="container rates-section">
+        <div class="section-header">
+            <h3 class="font-outfit section-heading">Live Exchange Rates</h3>
+            <span class="live-indicator"><span class="dot"></span> Live updates</span>
+        </div>
+
+        <div class="rates-grid">
+            <div class="rate-card" *ngFor="let rate of exchangeRates">
+                <div class="rate-header">
+                    <div class="currency-info">
+                        <span class="currency-pair font-outfit">{{ rate.pair }}</span>
+                        <span class="currency-name">{{ rate.pair }}</span>
+                    </div>
+                    <div class="trend" [ngClass]="rate.trend">
+                        <span *ngIf="rate.trend === 'up'">▲</span>
+                        <span *ngIf="rate.trend === 'down'">▼</span>
+                        <span *ngIf="rate.trend === 'flat'">−</span>
+                        {{ rate.change }}
+                    </div>
+                </div>
+                <span class="label">Major Pairs</span>
+                <h2 class="font-outfit amount">USD/ZAR 18.452</h2>
+                <span class="positive">+0.12% today</span>
+                <div class="rate-body">
+                    <div class="rate-item">
+                        <span class="rate-label">Latest Rate</span>
+                        <span class="rate-value font-outfit">{{ rate.rate }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="layout-grid">
+
+            <div class="deals-panel">
+                <h3 class="font-outfit section-heading">Recent FX Deals</h3>
+                <div class="history-table-container">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>Reference</th>
+                                <th>Pair</th>
+                                <th>Action</th>
+                                <th>Amount</th>
+                                <th>Rate</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let deal of recentDeals">
+                                <td class="font-outfit deal-ref">{{ deal.ref }}</td>
+                                <td class="font-outfit pair-col">{{ deal.pair }}</td>
+                                <td>{{ deal.action }}</td>
+                                <td class="font-outfit amount-col">{{ deal.amount }}</td>
+                                <td class="font-outfit">{{ deal.rate }}</td>
+                                <td><span class="status-badge" [ngClass]="deal.status.toLowerCase()">{{ deal.status
+                                        }}</span></td>
+                                <td>{{ deal.date }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="side-panel">
+                <h3 class="font-outfit section-heading">Global Treasury</h3>
+                <div class="treasury-card">
+                    <div class="treasury-item">
+                        <div class="icon-circle usd"><i class="icon-currency-dollar"></i></div>
+                        <div class="treasury-info">
+                            <span class="label">Daily Trading Volume</span>
+                            <h3 class="font-outfit">$ 1.2M</h3>
+                            <span class="caption">Avg. over 30 days</span>
+                        </div>
+                        <button class="btn-text">Convert</button>
+                    </div>
+                    <div class="treasury-item">
+                        <div class="icon-circle eur"><i class="icon-currency-euro"></i></div>
+                        <div class="treasury-info">
+                            <span class="font-outfit">EUR Account</span>
+                            <span class="balance">€ 4,200.00</span>
+                        </div>
+                        <button class="btn-text">Convert</button>
+                    </div>
+
+                    <div class="action-box">
+                        <h4>Need to make an import payment?</h4>
+                        <p>Use our Trade Finance portal for Letters of Credit.</p>
+                        <a href="#" class="link">Go to Trade Finance →</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>

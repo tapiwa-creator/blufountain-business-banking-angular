@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Color Palette */
+  --bg-dark: #0a0e14;
+  --bg-dark-secondary: #141b25;
+  --bg-light: #f8fafc;
+  --text-white: #ffffff;
+  --text-gray-light: #94a3b8;
+  --text-gray-dark: #475569;
+  --primary-gold: #d4af37;
+  --primary-gold-light: #f1e5ac;
+  
+  /* Status Colors */
+  --status-pending: #818cf8;
+  --status-success: #10b981;
+  --status-warning: #f59e0b;
+  --status-danger: #ef4444;
+  
+  /* Gradients */
+  --grad-blue: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --grad-green: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+  --grad-purple: linear-gradient(135deg, #312e81 0%, #4338ca 100%);
+  
+  /* Spacing & Borders */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-gray-dark);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-outfit {
+  font-family: 'Outfit', sans-serif;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

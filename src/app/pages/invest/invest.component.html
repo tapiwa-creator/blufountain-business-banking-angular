@@ -1,0 +1,103 @@
+<main class="page-container">
+    <section class="container header-section">
+        <div>
+            <h1 class="font-outfit page-title">Investment Portfolio</h1>
+            <p class="page-subtitle">Grow your surplus cash and optimize yields with strategic instruments.</p>
+        </div>
+        <div class="header-actions">
+            <button class="action-btn secondary">Download Statement</button>
+            <button class="action-btn primary">New Investment</button>
+        </div>
+    </section>
+
+    <section class="container portfolio-overview">
+        <div class="overview-card main-balance">
+            <span class="label">Total Portfolio Value</span>
+            <h2 class="font-outfit amount">$ {{ investmentPortfolio.totalValue }}</h2>
+            <div class="day-change">
+                <span class="positive">{{ investmentPortfolio.dayChange }}</span>
+                <span class="text-muted">({{ investmentPortfolio.dayChangePercent }} today)</span>
+            </div>
+        </div>
+
+        <div class="overview-stats">
+            <div class="stat-box">
+                <span class="label">Blended Yield</span>
+                <h3 class="font-outfit stat-val text-gold">{{ investmentPortfolio.portfolioYield }}</h3>
+                <span class="caption">Annualized return</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">Liquid Assets</span>
+                <h3 class="font-outfit stat-val">$ 7.45M</h3>
+                <span class="caption">Available &lt;48hrs</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">Term Assets</span>
+                <h3 class="font-outfit stat-val">$ 5.00M</h3>
+                <span class="caption">Locked in fixed terms</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="container list-section">
+        <div class="section-header">
+            <h3 class="font-outfit section-heading">Active Holdings</h3>
+        </div>
+        <div class="holdings-table-wrapper">
+            <table class="holdings-table">
+                <thead>
+                    <tr>
+                        <th>Instrument</th>
+                        <th>Asset Class</th>
+                        <th>Current Balance (USD)</th>
+                        <th>Current Yield</th>
+                        <th>Maturity / Liquidity</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of activeInvestments">
+                        <td class="font-outfit asset-name">{{ item.name }}</td>
+                        <td><span class="class-badge">{{ item.type }}</span></td>
+                        <td class="font-outfit text-right amount-col">{{ item.balance }}</td>
+                        <td class="font-outfit rate-col">{{ item.rate }}</td>
+                        <td>{{ item.maturity }}</td>
+                        <td><span class="status-indicator" [ngClass]="item.status.toLowerCase()">{{ item.status
+                                }}</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="container opportunities-section">
+        <div class="section-header">
+            <h3 class="font-outfit section-heading">Featured Opportunities</h3>
+            <a href="#" class="view-all-link">Browse all products ›</a>
+        </div>
+
+        <div class="opportunities-grid">
+            <div class="opp-card" *ngFor="let opp of opportunities">
+                <div class="opp-header">
+                    <div class="opp-icon"><i [class]="opp.icon"></i></div>
+                    <span class="risk-badge"
+                        [ngClass]="{'low': opp.risk === 'Low', 'med': opp.risk.includes('Medium')}">{{ opp.risk }}
+                        Risk</span>
+                </div>
+                <h4 class="font-outfit">{{ opp.title }}</h4>
+
+                <div class="opp-details">
+                    <div class="opp-stat">
+                        <span class="opp-label">Target Rate</span>
+                        <span class="opp-val text-gold font-outfit">{{ opp.rate }}</span>
+                    </div>
+                    <div class="opp-stat">
+                        <span class="opp-label">Min. Investment</span>
+                        <span class="opp-val font-outfit">{{ opp.minAmount }}</span>
+                    </div>
+                </div>
+                <button class="btn btn-outline-gold">Invest</button>
+            </div>
+        </div>
+    </section>
+</main>

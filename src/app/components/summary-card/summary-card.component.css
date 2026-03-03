@@ -1,0 +1,90 @@
+.summary-card {
+    background: var(--text-white);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 4px solid transparent;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.summary-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.summary-card.blue {
+    border-top-color: var(--status-pending);
+}
+
+.summary-card.green {
+    border-top-color: var(--status-success);
+}
+
+.summary-card.purple {
+    border-top-color: var(--status-warning);
+}
+
+.summary-card.red {
+    border-top-color: var(--status-danger);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.card-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-gray-light);
+    letter-spacing: 0.5px;
+}
+
+.card-icon-wrapper {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.card-icon-wrapper.blue {
+    background-color: rgba(129, 140, 248, 0.1);
+    color: var(--status-pending);
+}
+
+.card-icon-wrapper.green {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--status-success);
+}
+
+.card-icon-wrapper.purple {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--status-warning);
+}
+
+.card-icon-wrapper.red {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--status-danger);
+}
+
+.card-amount {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--bg-dark);
+    margin: 0.5rem 0;
+}
+
+.card-subtitle {
+    font-size: 0.75rem;
+    color: var(--text-gray-light);
+}

@@ -1,0 +1,127 @@
+.account-card {
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    color: var(--text-white);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-height: 280px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.account-card:hover {
+    transform: scale(1.02);
+}
+
+.account-card.blue {
+    background: var(--grad-blue);
+}
+
+.account-card.green {
+    background: var(--grad-green);
+}
+
+.account-card.purple {
+    background: var(--grad-purple);
+}
+
+.account-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(30%, -30%);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.account-type {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--primary-gold);
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.account-name {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+}
+
+.account-number {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+.card-tag {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.balance-label {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.balance-amount {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.currency {
+    font-size: 1.25rem;
+    vertical-align: middle;
+    margin-right: 0.25rem;
+}
+
+.card-footer {
+    margin-top: auto;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.action-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: opacity 0.2s;
+}
+
+.action-btn:hover {
+    opacity: 0.9;
+}
+
+.action-btn.primary {
+    background: var(--text-white);
+    color: var(--bg-dark);
+}
+
+.action-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}

@@ -1,0 +1,65 @@
+<main class="dashboard-container">
+    <section class="welcome-section container">
+        <div class="welcome-text">
+            <div class="dashboard-brand">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" width="48" height="48">
+                    <!-- Central large drop -->
+                    <path d="M50 10 Q50 40 50 45 A8 8 0 1 1 50 61 A8 8 0 1 1 50 45 Z" fill="#d4af37" />
+                    <!-- Inner medium drops -->
+                    <path d="M35 30 Q42 42 45 45 A6 6 0 1 0 35 30 Z" fill="#d4af37" />
+                    <path d="M65 30 Q58 42 55 45 A6 6 0 1 1 65 30 Z" fill="#d4af37" />
+                    <!-- Outer small drops -->
+                    <path d="M22 45 Q35 50 40 52 A5 5 0 1 0 22 45 Z" fill="#d4af37" />
+                    <path d="M78 45 Q65 50 60 52 A5 5 0 1 1 78 45 Z" fill="#d4af37" />
+                    <!-- Base ripple -->
+                    <ellipse cx="50" cy="70" rx="35" ry="6" fill="none" stroke="#d4af37" stroke-width="3" />
+                </svg>
+                <h1 class="font-outfit">
+                    <span class="brand-blu">Blue</span><span class="brand-fountain">Fountain</span> Business <span
+                        class="diamond">◆</span>
+                </h1>
+            </div>
+            <p>Welcome back, {{ userName }}</p>
+        </div>
+        <div class="calendar-chip">📅 {{ currentDate }}</div>
+    </section>
+
+    <section class="summary-section container">
+        <div class="summary-grid">
+            <app-summary-card *ngFor="let card of summaryCards" [title]="card.title" [amount]="card.amount"
+                [subtitle]="card.subtitle" [icon]="card.icon" [statusColor]="card.color">
+            </app-summary-card>
+        </div>
+    </section>
+
+    <section class="accounts-section container">
+        <div class="section-header">
+            <h2 class="font-outfit">Business Accounts</h2>
+            <a href="#" class="view-all-link">View all accounts ›</a>
+        </div>
+        <div class="accounts-grid">
+            <app-account-card *ngFor="let acc of accounts" [accountType]="acc.type" [accountName]="acc.name"
+                [accountNumber]="acc.number" [balance]="acc.balance" [currency]="acc.currency || 'R'" [tag]="acc.tag"
+                [variant]="acc.variant">
+            </app-account-card>
+        </div>
+    </section>
+
+    <section class="actions-section container">
+        <h2 class="font-outfit section-title">Quick Actions</h2>
+        <app-quick-actions></app-quick-actions>
+    </section>
+
+    <section class="lists-section container">
+        <div class="lists-grid">
+            <div class="list-wrapper">
+                <app-transaction-list title="Recent Business Transactions" [items]="recentTransactions"
+                    type="recent"></app-transaction-list>
+            </div>
+            <div class="list-wrapper">
+                <app-transaction-list title="Upcoming Payables" [items]="upcomingPayables"
+                    type="upcoming"></app-transaction-list>
+            </div>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,117 @@
+.dashboard-container {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    background-color: var(--bg-light);
+    min-height: 80vh;
+}
+
+.welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.welcome-text h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--bg-dark);
+}
+
+.diamond {
+    color: var(--primary-gold);
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+.welcome-text p {
+    color: var(--text-gray-light);
+    font-size: 1rem;
+}
+
+.calendar-chip {
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: var(--text-gray-dark);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-header h2,
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--bg-dark);
+}
+
+.view-all-link {
+    font-size: 0.85rem;
+    color: var(--primary-gold);
+    font-weight: 600;
+}
+
+.accounts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.actions-section {
+    margin-bottom: 3rem;
+}
+
+.lists-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+    .summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .accounts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .lists-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .summary-grid,
+    .accounts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}

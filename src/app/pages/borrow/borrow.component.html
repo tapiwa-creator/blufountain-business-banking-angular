@@ -1,0 +1,80 @@
+<main class="page-container">
+    <section class="container header-section">
+        <div>
+            <h1 class="font-outfit page-title">Borrowing Solutions</h1>
+            <p class="page-subtitle">Ignite your business growth with tailored financing products.</p>
+        </div>
+        <div class="header-actions">
+            <button class="action-btn secondary">Speak to a Banker</button>
+            <button class="action-btn primary">Start Application</button>
+        </div>
+    </section>
+
+    <section class="container calculator-banner">
+        <div class="calc-content">
+            <h3 class="font-outfit text-white">Not sure what you can afford?</h3>
+            <p>Use our interactive loan calculator to estimate your monthly repayments based on required capital and
+                terms.</p>
+        </div>
+        <button class="btn btn-gold">Open Calculator</button>
+    </section>
+
+    <section class="container products-section">
+        <div class="section-header">
+            <h3 class="font-outfit section-heading">Our Financing Options</h3>
+        </div>
+
+        <div class="products-grid">
+            <div class="product-card" *ngFor="let option of financingOptions">
+                <div class="product-header">
+                    <div class="icon-wrapper"><i [class]="option.icon"></i></div>
+                    <h4 class="font-outfit">{{ option.title }}</h4>
+                </div>
+
+                <p class="product-desc">{{ option.description }}</p>
+
+                <div class="limits-box">
+                    <div class="limit-col">
+                        <span class="limit-label">From</span>
+                        <span class="limit-value font-outfit">{{ option.minAmount }}</span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="limit-col">
+                        <span class="limit-label">Up to</span>
+                        <span class="limit-value font-outfit">{{ option.maxAmount }}</span>
+                    </div>
+                </div>
+
+                <ul class="features-list">
+                    <li *ngFor="let feature of option.features">
+                        <span class="check-icon">✓</span> {{ feature }}
+                    </li>
+                </ul>
+
+                <div class="card-footer">
+                    <button class="btn-product outline">Learn More</button>
+                    <button class="btn-product solid">Apply Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container applications-section" *ngIf="recentApplications.length > 0">
+        <div class="apps-panel">
+            <h3 class="font-outfit section-heading">Recent Applications</h3>
+            <div class="app-cards">
+                <div class="app-row" *ngFor="let app of recentApplications">
+                    <div class="app-info">
+                        <h4 class="font-outfit">{{ app.type }}</h4>
+                        <span class="app-ref">Ref: {{ app.ref }} • Submitted {{ app.submitDate }}</span>
+                    </div>
+                    <div class="app-amount font-outfit">{{ app.amount }}</div>
+                    <div class="app-status">
+                        <span class="status-badge" [ngClass]="app.status.toLowerCase()">{{ app.status }}</span>
+                    </div>
+                    <button class="btn-icon"><i class="icon-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

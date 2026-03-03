@@ -1,0 +1,128 @@
+<div class="sub-nav" (click.outside)="closeDropdown()">
+    <div class="container sub-nav-content">
+        <div class="main-tabs">
+            <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="tab">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                        d="M10.707 2.293a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 1.414 1.414L4 10.414V17a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-6.586l.293.293a1 1 0 0 0 1.414-1.414l-7-7z" />
+                </svg>
+                Dashboard
+            </a>
+
+            <!-- Transact with mega dropdown -->
+            <div class="tab-wrapper" (mouseenter)="toggleDropdown('transact')" (mouseleave)="closeDropdown()">
+                <a href="#" class="tab" [class.dropdown-active]="activeDropdown === 'transact'">
+                    Transact
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor"
+                        viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.168l3.71-3.938a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </a>
+
+                <div class="mega-dropdown" *ngIf="activeDropdown === 'transact'">
+                    <div class="mega-dropdown-inner">
+                        <div class="dropdown-col" *ngFor="let section of transactMenu">
+                            <div class="col-header">
+                                <span class="col-title">{{ section.title }}</span>
+                            </div>
+                            <ul class="col-items">
+                                <li *ngFor="let item of section.items">
+                                    <a href="#" class="dropdown-item">{{ item }}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cash Management with mega dropdown -->
+            <div class="tab-wrapper" (mouseenter)="toggleDropdown('cashManagement')" (mouseleave)="closeDropdown()">
+                <a href="#" class="tab" [class.dropdown-active]="activeDropdown === 'cashManagement'">
+                    Cash Management
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor"
+                        viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.168l3.71-3.938a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <div class="mega-dropdown" *ngIf="activeDropdown === 'cashManagement'">
+                    <div class="mega-dropdown-inner">
+                        <div class="dropdown-col" *ngFor="let section of cashManagementMenu">
+                            <div class="col-header">
+                                <span class="col-title">{{ section.title }}</span>
+                            </div>
+                            <ul class="col-items">
+                                <li *ngFor="let item of section.items">
+                                    <a href="#" class="dropdown-item">{{ item }}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Trade Finance with mega dropdown -->
+            <div class="tab-wrapper" (mouseenter)="toggleDropdown('tradeFinance')" (mouseleave)="closeDropdown()">
+                <a href="#" class="tab" [class.dropdown-active]="activeDropdown === 'tradeFinance'">
+                    Trade Finance
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor"
+                        viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.168l3.71-3.938a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <div class="mega-dropdown" *ngIf="activeDropdown === 'tradeFinance'">
+                    <div class="mega-dropdown-inner">
+                        <div class="dropdown-col" *ngFor="let section of tradeFinanceMenu">
+                            <div class="col-header">
+                                <span class="col-title">{{ section.title }}</span>
+                            </div>
+                            <ul class="col-items">
+                                <li *ngFor="let item of section.items">
+                                    <a href="#" class="dropdown-item">{{ item }}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Reports with mega dropdown -->
+            <div class="tab-wrapper" (mouseenter)="toggleDropdown('reports')" (mouseleave)="closeDropdown()">
+                <a href="#" class="tab" [class.dropdown-active]="activeDropdown === 'reports'">
+                    Reports
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor"
+                        viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.168l3.71-3.938a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <div class="mega-dropdown" *ngIf="activeDropdown === 'reports'">
+                    <div class="mega-dropdown-inner">
+                        <div class="dropdown-col" *ngFor="let section of reportsMenu">
+                            <div class="col-header">
+                                <span class="col-title">{{ section.title }}</span>
+                            </div>
+                            <ul class="col-items">
+                                <li *ngFor="let item of section.items">
+                                    <a href="#" class="dropdown-item">{{ item }}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a routerLink="/loans" routerLinkActive="active" class="tab">Loans</a>
+            <a routerLink="/fx-forex" routerLinkActive="active" class="tab">FX & Forex</a>
+            <a routerLink="/borrow" routerLinkActive="active" class="tab">Borrow</a>
+            <a routerLink="/invest" routerLinkActive="active" class="tab">Invest</a>
+        </div>
+
+        <button class="quick-links-btn font-outfit">
+            ⚡ QuickLinks
+        </button>
+    </div>
+</div>

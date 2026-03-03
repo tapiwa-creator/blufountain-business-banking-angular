@@ -1,0 +1,8 @@
+<div class="quick-actions-grid">
+    <div class="action-item" *ngFor="let action of actions">
+        <div class="icon-box" [ngClass]="action.color">
+            <i [class]="action.icon"></i>
+        </div>
+        <span class="action-name">{{ action.name }}</span>
+    </div>
+</div>

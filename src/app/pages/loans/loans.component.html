@@ -1,0 +1,89 @@
+<main class="page-container">
+    <section class="container header-section">
+        <div>
+            <h1 class="font-outfit page-title">Loans & Facilities</h1>
+            <p class="page-subtitle">Manage your business credit and explore financing options.</p>
+        </div>
+        <button class="action-btn primary">Apply for New Loan</button>
+    </section>
+
+    <section class="container">
+        <div class="loans-overview-grid">
+            <div class="overview-card total-exposure">
+                <span class="label">Total Exposure</span>
+                <h2 class="font-outfit amount">$ 6,850,000.00</h2>
+                <span class="text-muted">Across 3 active facilities</span>
+            </div>
+            <div class="overview-card next-payment">
+                <span class="label">Next Payment Due</span>
+                <h3 class="font-outfit text-gold">$ 42,500.00</h3>
+                <span class="caption">Due on 1 Mar 2026</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="container list-section">
+        <h3 class="font-outfit section-heading">Active Facilities</h3>
+        <div class="facility-cards">
+            <div class="loan-card" *ngFor="let loan of activeLoans">
+                <div class="loan-header">
+                    <div class="loan-title-group">
+                        <span class="loan-type font-outfit">{{ loan.type }}</span>
+                        <span class="loan-account">{{ loan.accountNumber }}</span>
+                    </div>
+                    <span class="status-badge" [class.active]="loan.status === 'Active'">{{ loan.status }}</span>
+                </div>
+
+                <div class="progress-section">
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" [style.width.%]="loan.progress"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span>$ {{ loan.balance }} remaining</span>
+                        <span>Original: $ {{ loan.principal }}</span>
+                    </div>
+                </div>
+
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <span class="detail-label">Interest Rate</span>
+                        <span class="detail-value">{{ loan.interestRate }}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Next Installment</span>
+                        <span class="detail-value">{{ loan.nextInstallment.includes('Only') ? loan.nextInstallment : '$
+                            ' + loan.nextInstallment }}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Due Date</span>
+                        <span class="detail-value">{{ loan.dueDate }}</span>
+                    </div>
+                </div>
+
+                <div class="card-actions">
+                    <button class="btn btn-outline">Make Payment</button>
+                    <button class="btn btn-outline">View Statement</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container offers-section">
+        <h3 class="font-outfit section-heading">Pre-approved Offers</h3>
+        <div class="offers-grid">
+            <div class="offer-card" *ngFor="let offer of loanOffers">
+                <div class="offer-icon"><i [class]="offer.icon"></i></div>
+                <div class="offer-info">
+                    <h4 class="font-outfit">{{ offer.title }}</h4>
+                    <span class="offer-amount">{{ offer.amount }}</span>
+                </div>
+                <div class="offer-terms">
+                    <span>{{ offer.rate }}</span>
+                    <span>•</span>
+                    <span>{{ offer.term }}</span>
+                </div>
+                <button class="btn btn-gold">Review Offer</button>
+            </div>
+        </div>
+    </section>
+</main>
