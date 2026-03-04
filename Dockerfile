@@ -12,6 +12,7 @@ FROM nginx:alpine
 WORKDIR /usr/share/nginx/html
 COPY --from=build-stage /app/dist/blufountain/browser .
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
+COPY nginx/nginx.dev.common /etc/nginx/conf.d/nginx.common
 ENV PORT=8443
 EXPOSE 8443
 CMD ["nginx", "-g", "daemon off;"]
