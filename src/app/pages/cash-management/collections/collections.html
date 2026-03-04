@@ -1,0 +1,53 @@
+<main class="page-container">
+    <section class="container header-section">
+        <div>
+            <h1 class="font-outfit page-title">Collections</h1>
+            <p class="page-subtitle">Manage and automate your inbound payments securely and efficiently.</p>
+        </div>
+        <button class="action-btn primary">New Collection</button>
+    </section>
+
+    <section class="container layout-with-sidebar">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar-nav">
+            <h3 class="font-outfit sidebar-title">Collection Methods</h3>
+            <ul class="nav-list">
+                <li *ngFor="let tab of tabs" 
+                    [class.active]="activeTab === tab"
+                    (click)="setActiveTab(tab)">
+                    {{ tab }}
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="content-card">
+                <div class="card-header">
+                    <h2 class="font-outfit">{{ activeTab }}</h2>
+                </div>
+                
+                <div class="card-body" [ngSwitch]="activeTab">
+                    
+                    <div *ngSwitchDefault class="placeholder-content">
+                        <div class="icon-wrapper"><i class="icon-refresh"></i></div>
+                        <h3 class="font-outfit">{{ activeTab }}</h3>
+                        <p>Streamline your inbound cash flow with our enterprise {{ activeTab }} solution. Securely authorize and collect payments directly from your customers' accounts.</p>
+                        
+                        <div class="form-container" style="text-align: left; margin-top: 1.5rem; width: 100%;">
+                            <div class="form-group">
+                                <label>Collection Profile</label>
+                                <select class="form-control">
+                                    <option>Main Receivables (Default)</option>
+                                    <option>Membership Subscriptions</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-gold full-width">Manage {{ activeTab }} Mandates</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

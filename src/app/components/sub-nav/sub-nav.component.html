@@ -29,7 +29,7 @@
                             </div>
                             <ul class="col-items">
                                 <li *ngFor="let item of section.items">
-                                    <a href="#" class="dropdown-item">{{ item }}</a>
+                                    <a [routerLink]="['/transact', section.title.toLowerCase()]" [queryParams]="{tab: item}" (click)="closeDropdown()" class="dropdown-item">{{ item }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -56,7 +56,7 @@
                             </div>
                             <ul class="col-items">
                                 <li *ngFor="let item of section.items">
-                                    <a href="#" class="dropdown-item">{{ item }}</a>
+                                    <a [routerLink]="['/cash-management', section.title.toLowerCase()]" [queryParams]="{tab: item}" (click)="closeDropdown()" class="dropdown-item">{{ item }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -82,7 +82,7 @@
                             </div>
                             <ul class="col-items">
                                 <li *ngFor="let item of section.items">
-                                    <a href="#" class="dropdown-item">{{ item }}</a>
+                                    <a [routerLink]="['/trade-finance', section.title.toLowerCase().split(' ').join('-')]" [queryParams]="{tab: item}" (click)="closeDropdown()" class="dropdown-item">{{ item }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -108,7 +108,7 @@
                             </div>
                             <ul class="col-items">
                                 <li *ngFor="let item of section.items">
-                                    <a href="#" class="dropdown-item">{{ item }}</a>
+                                    <a [routerLink]="['/reports', section.title.toLowerCase().split(' & ').join('-').split(' ').join('-')]" [queryParams]="{tab: item}" (click)="closeDropdown()" class="dropdown-item">{{ item }}</a>
                                 </li>
                             </ul>
                         </div>

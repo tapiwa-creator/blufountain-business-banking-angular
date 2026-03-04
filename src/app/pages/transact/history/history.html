@@ -1,0 +1,67 @@
+<main class="page-container">
+    <section class="container header-section">
+        <div>
+            <h1 class="font-outfit page-title">Transaction History</h1>
+            <p class="page-subtitle">Track and audit all your past payments, transfers, and notifications.</p>
+        </div>
+        <button class="action-btn primary">Download Export</button>
+    </section>
+
+    <section class="container layout-with-sidebar">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar-nav">
+            <h3 class="font-outfit sidebar-title">History Logs</h3>
+            <ul class="nav-list">
+                <li *ngFor="let tab of tabs" 
+                    [class.active]="activeTab === tab"
+                    (click)="setActiveTab(tab)">
+                    {{ tab }}
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="content-card">
+                <div class="card-header">
+                    <h2 class="font-outfit">{{ activeTab }}</h2>
+                </div>
+                
+                <div class="card-body" [ngSwitch]="activeTab">
+                    
+                    <div *ngSwitchCase="'Transactions'" class="table-container">
+                        <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid var(--border-color); color: var(--text-secondary);">
+                                    <th style="padding: 1rem 0.5rem; font-weight: 500;">Date</th>
+                                    <th style="padding: 1rem 0.5rem; font-weight: 500;">Description</th>
+                                    <th style="padding: 1rem 0.5rem; font-weight: 500;">Amount</th>
+                                    <th style="padding: 1rem 0.5rem; font-weight: 500;">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let t of recentTransactions" style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 1rem 0.5rem;">{{ t.date }}</td>
+                                    <td style="padding: 1rem 0.5rem;">{{ t.desc }}</td>
+                                    <td style="padding: 1rem 0.5rem;" [style.color]="t.deposit ? 'var(--status-success)' : 'inherit'">{{ t.amount }}</td>
+                                    <td style="padding: 1rem 0.5rem;"><span style="background: var(--bg-main); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.85rem;">{{ t.status }}</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div *ngSwitchDefault class="placeholder-content">
+                        <div class="icon-wrapper"><i class="icon-clock"></i></div>
+                        <h3 class="font-outfit">View {{ activeTab }}</h3>
+                        <p>Search and filter through your historical {{ activeTab.toLowerCase() }} spanning up to 5 years.</p>
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <input type="date" class="form-control" style="max-width: 150px;">
+                            <button class="btn btn-outline">Search</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

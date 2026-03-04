@@ -1,0 +1,55 @@
+<main class="page-container">
+    <section class="container header-section">
+        <div>
+            <h1 class="font-outfit page-title">Financial Reports</h1>
+            <p class="page-subtitle">Analyze your business performance with comprehensive financial statements.</p>
+        </div>
+        <button class="action-btn primary">Download Yearly Package</button>
+    </section>
+
+    <section class="container layout-with-sidebar">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar-nav">
+            <h3 class="font-outfit sidebar-title">Report Types</h3>
+            <ul class="nav-list">
+                <li *ngFor="let tab of tabs" 
+                    [class.active]="activeTab === tab"
+                    (click)="setActiveTab(tab)">
+                    {{ tab }}
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="content-card">
+                <div class="card-header">
+                    <h2 class="font-outfit">{{ activeTab }}</h2>
+                </div>
+                
+                <div class="card-body" [ngSwitch]="activeTab">
+                    
+                    <div *ngSwitchDefault class="placeholder-content">
+                        <div class="icon-wrapper"><i class="icon-chart-pie"></i></div>
+                        <h3 class="font-outfit">{{ activeTab }}</h3>
+                        <p>Generate and analyze your {{ activeTab.toLowerCase() }} with real-time data sync from all your business accounts.</p>
+                        
+                        <div class="form-container" style="text-align: left; margin-top: 2rem;">
+                            <div class="form-group">
+                                <label>Report Period</label>
+                                <select class="form-control">
+                                    <option>Current Month</option>
+                                    <option>Last Quarter</option>
+                                    <option>Financial Year to Date</option>
+                                    <option>Custom Range</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-gold full-width">Generate PDF Report</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

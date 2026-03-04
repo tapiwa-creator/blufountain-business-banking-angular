@@ -4,6 +4,22 @@ import { LoansComponent } from './pages/loans/loans.component';
 import { FxForexComponent } from './pages/fx-forex/fx-forex.component';
 import { BorrowComponent } from './pages/borrow/borrow.component';
 import { InvestComponent } from './pages/invest/invest.component';
+import { Pay } from './pages/transact/pay/pay';
+import { Transfer } from './pages/transact/transfer/transfer';
+import { Manage } from './pages/transact/manage/manage';
+import { History } from './pages/transact/history/history';
+import { Documents } from './pages/transact/documents/documents';
+import { Collections } from './pages/cash-management/collections/collections';
+import { Liquidity } from './pages/cash-management/liquidity/liquidity';
+import { Forecasting } from './pages/cash-management/forecasting/forecasting';
+import { Reporting } from './pages/cash-management/reporting/reporting';
+import { LettersOfCredit } from './pages/trade-finance/letters-of-credit/letters-of-credit';
+import { Guarantees } from './pages/trade-finance/guarantees/guarantees';
+import { TradeCollections } from './pages/trade-finance/trade-collections/trade-collections';
+import { TradeDocuments } from './pages/trade-finance/trade-documents/trade-documents';
+import { FinancialReports } from './pages/reports/financial-reports/financial-reports';
+import { TransactionReports } from './pages/reports/transaction-reports/transaction-reports';
+import { CustomExport } from './pages/reports/custom-export/custom-export';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -12,5 +28,21 @@ export const routes: Routes = [
     { path: 'fx-forex', component: FxForexComponent },
     { path: 'borrow', component: BorrowComponent },
     { path: 'invest', component: InvestComponent },
+    { path: 'transact/pay', component: Pay },
+    { path: 'transact/transfer', component: Transfer },
+    { path: 'transact/manage', component: Manage },
+    { path: 'transact/history', component: History },
+    { path: 'transact/documents', component: Documents },
+    { path: 'cash-management/collections', component: Collections },
+    { path: 'cash-management/liquidity', component: Liquidity },
+    { path: 'cash-management/forecasting', component: Forecasting },
+    { path: 'cash-management/reporting', component: Reporting },
+    { path: 'trade-finance/letters-of-credit', component: LettersOfCredit },
+    { path: 'trade-finance/guarantees', component: Guarantees },
+    { path: 'trade-finance/collections', component: TradeCollections },
+    { path: 'trade-finance/documents', component: TradeDocuments },
+    { path: 'reports/financial-reports', component: FinancialReports },
+    { path: 'reports/transaction-reports', component: TransactionReports },
+    { path: 'reports/custom-export', component: CustomExport },
     { path: '**', redirectTo: 'dashboard' }
 ];

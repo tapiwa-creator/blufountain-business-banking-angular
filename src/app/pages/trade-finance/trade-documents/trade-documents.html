@@ -1,0 +1,46 @@
+<main class="page-container">
+    <section class="container header-section">
+        <div>
+            <h1 class="font-outfit page-title">Trade Documentation</h1>
+            <p class="page-subtitle">Centralize and manage all critical shipping and compliance documentation.</p>
+        </div>
+        <button class="action-btn primary">Upload New Document</button>
+    </section>
+
+    <section class="container layout-with-sidebar">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar-nav">
+            <h3 class="font-outfit sidebar-title">Document Vault</h3>
+            <ul class="nav-list">
+                <li *ngFor="let tab of tabs" 
+                    [class.active]="activeTab === tab"
+                    (click)="setActiveTab(tab)">
+                    {{ tab }}
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="content-card">
+                <div class="card-header">
+                    <h2 class="font-outfit">{{ activeTab }}</h2>
+                </div>
+                
+                <div class="card-body" [ngSwitch]="activeTab">
+                    
+                    <div *ngSwitchDefault class="placeholder-content">
+                        <div class="icon-wrapper"><i class="icon-document"></i></div>
+                        <h3 class="font-outfit">{{ activeTab }} Repository</h3>
+                        <p>Securely store, retrieve, and transmit your verified {{ activeTab.toLowerCase() }} documents instantly to partners worldwide.</p>
+                        
+                        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; justify-content: center;">
+                            <button class="btn btn-gold">Browse Repository</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

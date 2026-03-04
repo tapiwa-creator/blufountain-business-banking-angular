@@ -1,0 +1,47 @@
+<main class="page-container">
+    <section class="container header-section">
+        <div>
+            <h1 class="font-outfit page-title">Liquidity Management</h1>
+            <p class="page-subtitle">Optimize your working capital with automated funding structures.</p>
+        </div>
+        <button class="action-btn primary">Configure Rules</button>
+    </section>
+
+    <section class="container layout-with-sidebar">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar-nav">
+            <h3 class="font-outfit sidebar-title">Liquidity Structures</h3>
+            <ul class="nav-list">
+                <li *ngFor="let tab of tabs" 
+                    [class.active]="activeTab === tab"
+                    (click)="setActiveTab(tab)">
+                    {{ tab }}
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="content-card">
+                <div class="card-header">
+                    <h2 class="font-outfit">{{ activeTab }}</h2>
+                </div>
+                
+                <div class="card-body" [ngSwitch]="activeTab">
+                    
+                    <div *ngSwitchDefault class="placeholder-content">
+                        <div class="icon-wrapper"><i class="icon-chart"></i></div>
+                        <h3 class="font-outfit">{{ activeTab }} Setup</h3>
+                        <p>Enhance yield and reduce interest costs globally across your corporate structure using intelligent {{ activeTab.toLowerCase() }} arrangements.</p>
+                        
+                        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; justify-content: center;">
+                            <button class="btn btn-gold">View Active Structures</button>
+                            <button class="btn btn-outline">Consult Specialist</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

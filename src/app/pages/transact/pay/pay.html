@@ -1,0 +1,72 @@
+<main class="page-container">
+    <section class="container header-section">
+        <div>
+            <h1 class="font-outfit page-title">Payments</h1>
+            <p class="page-subtitle">Manage all your outgoing payments and beneficiaries securely.</p>
+        </div>
+        <button class="action-btn primary">New Payment</button>
+    </section>
+
+    <section class="container layout-with-sidebar">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar-nav">
+            <h3 class="font-outfit sidebar-title">Payment Options</h3>
+            <ul class="nav-list">
+                <li *ngFor="let tab of tabs" 
+                    [class.active]="activeTab === tab"
+                    (click)="setActiveTab(tab)">
+                    {{ tab }}
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="content-card">
+                <div class="card-header">
+                    <h2 class="font-outfit">{{ activeTab }}</h2>
+                </div>
+                
+                <!-- Dynamic Content based on activeTab -->
+                <div class="card-body" [ngSwitch]="activeTab">
+                    
+                    <!-- Pay Beneficiary Form -->
+                    <div *ngSwitchCase="'Pay Beneficiary'" class="form-container">
+                        <div class="form-group">
+                            <label>Select Beneficiary</label>
+                            <select class="form-control">
+                                <option value="" disabled selected>Choose a beneficiary...</option>
+                                <option *ngFor="let b of savedBeneficiaries" [value]="b.account">{{ b.name }} ({{ b.account }})</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Amount (USD)</label>
+                            <input type="number" class="form-control" placeholder="0.00">
+                        </div>
+                        <div class="form-group">
+                            <label>From Account</label>
+                            <select class="form-control">
+                                <option>Business Current - 4062-874-10-3 ($184,250.00)</option>
+                                <option>Business Savings - 4062-874-10-4 ($75,800.00)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Description / Reference</label>
+                            <input type="text" class="form-control" placeholder="Optional reference">
+                        </div>
+                        <button class="btn btn-gold full-width">Continue to Review</button>
+                    </div>
+
+                    <!-- General placeholder for other tabs -->
+                    <div *ngSwitchDefault class="placeholder-content">
+                        <div class="icon-wrapper"><i class="icon-refresh"></i></div>
+                        <h3 class="font-outfit">{{ activeTab }}</h3>
+                        <p>This module is currently being optimized and configured for your specific business account tier.</p>
+                        <button class="btn btn-outline">Contact Relationship Manager</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

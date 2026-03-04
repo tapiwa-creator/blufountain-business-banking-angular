@@ -1,0 +1,53 @@
+<main class="page-container">
+    <section class="container header-section">
+        <div>
+            <h1 class="font-outfit page-title">Guarantees</h1>
+            <p class="page-subtitle">Demonstrate your financial capability and secure contracts globally.</p>
+        </div>
+        <button class="action-btn primary">Request Guarantee</button>
+    </section>
+
+    <section class="container layout-with-sidebar">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar-nav">
+            <h3 class="font-outfit sidebar-title">Guarantee Services</h3>
+            <ul class="nav-list">
+                <li *ngFor="let tab of tabs" 
+                    [class.active]="activeTab === tab"
+                    (click)="setActiveTab(tab)">
+                    {{ tab }}
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="content-card">
+                <div class="card-header">
+                    <h2 class="font-outfit">{{ activeTab }}</h2>
+                </div>
+                
+                <div class="card-body" [ngSwitch]="activeTab">
+                    
+                    <div *ngSwitchDefault class="placeholder-content">
+                        <div class="icon-wrapper"><i class="icon-shield"></i></div>
+                        <h3 class="font-outfit">{{ activeTab }} Operations</h3>
+                        <p>Access our comprehensive platform to handle all aspects of your {{ activeTab.toLowerCase() }} portfolios, from request to release.</p>
+                        
+                        <div class="form-container" style="text-align: left; margin-top: 1.5rem; width: 100%;">
+                            <div class="form-group">
+                                <label>Facility Line</label>
+                                <select class="form-control">
+                                    <option>Trade Facility USD - $2,500,000</option>
+                                    <option>Local Guarantees - $500,000</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-gold full-width">Proceed to {{ activeTab }}</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,69 @@
+<main class="page-container">
+    <section class="container header-section">
+        <div>
+            <h1 class="font-outfit page-title">Transfers</h1>
+            <p class="page-subtitle">Move money instantly between your accounts and entities globally.</p>
+        </div>
+    </section>
+
+    <section class="container layout-with-sidebar">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar-nav">
+            <h3 class="font-outfit sidebar-title">Transfer Types</h3>
+            <ul class="nav-list">
+                <li *ngFor="let tab of tabs" 
+                    [class.active]="activeTab === tab"
+                    (click)="setActiveTab(tab)">
+                    {{ tab }}
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="content-card">
+                <div class="card-header">
+                    <h2 class="font-outfit">{{ activeTab }}</h2>
+                </div>
+                
+                <!-- Dynamic Content based on activeTab -->
+                <div class="card-body" [ngSwitch]="activeTab">
+                    
+                    <!-- Between Own Accounts Form -->
+                    <div *ngSwitchCase="'Between Own Accounts'" class="form-container">
+                        <div class="form-group">
+                            <label>From Account</label>
+                            <select class="form-control">
+                                <option *ngFor="let acc of accounts" [value]="acc.number">{{ acc.name }} - {{ acc.balance }}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>To Account</label>
+                            <select class="form-control">
+                                <option *ngFor="let acc of accounts" [value]="acc.number">{{ acc.name }} - {{ acc.balance }}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Transfer Amount (USD)</label>
+                            <input type="number" class="form-control" placeholder="0.00">
+                        </div>
+                        <div class="form-group">
+                            <label>Reference (Optional)</label>
+                            <input type="text" class="form-control" placeholder="e.g. Monthly Savings">
+                        </div>
+                        <button class="btn btn-gold full-width">Review Transfer</button>
+                    </div>
+
+                    <!-- General placeholder for other tabs -->
+                    <div *ngSwitchDefault class="placeholder-content">
+                        <div class="icon-wrapper"><i class="icon-transfer"></i></div>
+                        <h3 class="font-outfit">{{ activeTab }}</h3>
+                        <p>This module requires authorization review. Please contact support to enable cross-entity or international transfers.</p>
+                        <button class="btn btn-outline">Request Access</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

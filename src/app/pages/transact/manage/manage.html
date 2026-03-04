@@ -1,0 +1,45 @@
+<main class="page-container">
+    <section class="container header-section">
+        <div>
+            <h1 class="font-outfit page-title">Manage Settings</h1>
+            <p class="page-subtitle">Configure your beneficiaries, groups, cards, and daily limits securely.</p>
+        </div>
+        <button class="action-btn primary">Add Beneficiary</button>
+    </section>
+
+    <section class="container layout-with-sidebar">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar-nav">
+            <h3 class="font-outfit sidebar-title">Management</h3>
+            <ul class="nav-list">
+                <li *ngFor="let tab of tabs" 
+                    [class.active]="activeTab === tab"
+                    (click)="setActiveTab(tab)">
+                    {{ tab }}
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="content-card">
+                <div class="card-header">
+                    <h2 class="font-outfit">{{ activeTab }}</h2>
+                </div>
+                
+                <div class="card-body" [ngSwitch]="activeTab">
+                    <!-- General placeholder for all manage tabs -->
+                    <div *ngSwitchDefault class="placeholder-content">
+                        <div class="icon-wrapper"><i class="icon-settings"></i></div>
+                        <h3 class="font-outfit">{{ activeTab }} Management</h3>
+                        <p>Use this section to view and update your {{ activeTab.toLowerCase() }}. For security reasons, changes to sensitive settings may take up to 24 hours to reflect.</p>
+                        <br>
+                        <button class="btn btn-outline" *ngIf="activeTab === 'Beneficiaries' || activeTab === 'Beneficiary Groups'">Manage List</button>
+                        <button class="btn btn-outline" *ngIf="activeTab === 'Card & Limits' || activeTab === 'Overdraft Limit'">Request Change</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

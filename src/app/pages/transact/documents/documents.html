@@ -1,0 +1,63 @@
+<main class="page-container">
+    <section class="container header-section">
+        <div>
+            <h1 class="font-outfit page-title">Documents Center</h1>
+            <p class="page-subtitle">Access and download your business statements, certificates, and reports securely.</p>
+        </div>
+    </section>
+
+    <section class="container layout-with-sidebar">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar-nav">
+            <h3 class="font-outfit sidebar-title">Official Documents</h3>
+            <ul class="nav-list">
+                <li *ngFor="let tab of tabs" 
+                    [class.active]="activeTab === tab"
+                    (click)="setActiveTab(tab)">
+                    {{ tab }}
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="content-card">
+                <div class="card-header">
+                    <h2 class="font-outfit">{{ activeTab }}</h2>
+                </div>
+                
+                <div class="card-body" [ngSwitch]="activeTab">
+                    
+                    <div *ngSwitchDefault class="placeholder-content">
+                        <div class="icon-wrapper"><i class="icon-document"></i></div>
+                        <h3 class="font-outfit">Download {{ activeTab }}</h3>
+                        <p>Generate secure PDF copies of your {{ activeTab.toLowerCase() }}.</p>
+                        
+                        <div class="form-container" style="text-align: left; margin-top: 2rem;">
+                            <div class="form-group">
+                                <label>Account</label>
+                                <select class="form-control">
+                                    <option>Business Current - 4062-874-10-3</option>
+                                    <option>Business Savings - 4062-874-10-4</option>
+                                    <option>All Accounts (Consolidated)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Date Range</label>
+                                <select class="form-control">
+                                    <option>Last 30 Days</option>
+                                    <option>Last 3 Months</option>
+                                    <option>Last 6 Months</option>
+                                    <option>Current Tax Year</option>
+                                    <option>Custom Range...</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-gold full-width">Generate PDF Document</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,54 @@
+<main class="page-container">
+    <section class="container header-section">
+        <div>
+            <h1 class="font-outfit page-title">Cash Forecasting</h1>
+            <p class="page-subtitle">Predict future positions and model financial scenarios accurately.</p>
+        </div>
+        <button class="action-btn primary">Generate Report</button>
+    </section>
+
+    <section class="container layout-with-sidebar">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar-nav">
+            <h3 class="font-outfit sidebar-title">Forecast Views</h3>
+            <ul class="nav-list">
+                <li *ngFor="let tab of tabs" 
+                    [class.active]="activeTab === tab"
+                    (click)="setActiveTab(tab)">
+                    {{ tab }}
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="content-card">
+                <div class="card-header">
+                    <h2 class="font-outfit">{{ activeTab }}</h2>
+                </div>
+                
+                <div class="card-body" [ngSwitch]="activeTab">
+                    
+                    <div *ngSwitchDefault class="placeholder-content">
+                        <div class="icon-wrapper"><i class="icon-trend"></i></div>
+                        <h3 class="font-outfit">Run {{ activeTab }}</h3>
+                        <p>Leverage historical data and predictive modeling to generate your comprehensive {{ activeTab.toLowerCase() }}. Stay ahead of your working capital needs.</p>
+                        
+                        <div class="form-container" style="text-align: left; margin-top: 1.5rem; width: 100%;">
+                            <div class="form-group">
+                                <label>Projection Period</label>
+                                <select class="form-control">
+                                    <option>Next 7 Days</option>
+                                    <option>Next 30 Days</option>
+                                    <option>End of Quarter</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-gold full-width">Compute Forecast</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

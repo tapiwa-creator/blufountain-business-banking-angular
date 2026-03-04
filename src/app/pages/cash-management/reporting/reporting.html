@@ -1,0 +1,54 @@
+<main class="page-container">
+    <section class="container header-section">
+        <div>
+            <h1 class="font-outfit page-title">Cash Management Reports</h1>
+            <p class="page-subtitle">Export consolidated data across multiple geographies and formats.</p>
+        </div>
+    </section>
+
+    <section class="container layout-with-sidebar">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar-nav">
+            <h3 class="font-outfit sidebar-title">Reporting Center</h3>
+            <ul class="nav-list">
+                <li *ngFor="let tab of tabs" 
+                    [class.active]="activeTab === tab"
+                    (click)="setActiveTab(tab)">
+                    {{ tab }}
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="content-card">
+                <div class="card-header">
+                    <h2 class="font-outfit">{{ activeTab }}</h2>
+                </div>
+                
+                <div class="card-body" [ngSwitch]="activeTab">
+                    
+                    <div *ngSwitchDefault class="placeholder-content">
+                        <div class="icon-wrapper"><i class="icon-document"></i></div>
+                        <h3 class="font-outfit">Export {{ activeTab }}</h3>
+                        <p>Format and download your {{ activeTab.toLowerCase() }} into ERP-ready files.</p>
+                        
+                        <div class="form-container" style="text-align: left; margin-top: 2rem;">
+                            <div class="form-group">
+                                <label>Select Output Format</label>
+                                <select class="form-control" [disabled]="activeTab === 'MT940 / BAI2 Export'">
+                                    <option *ngIf="activeTab === 'MT940 / BAI2 Export'" selected>SWIFT MT940 (.txt)</option>
+                                    <option *ngIf="activeTab !== 'MT940 / BAI2 Export'">PDF Document</option>
+                                    <option *ngIf="activeTab !== 'MT940 / BAI2 Export'">CSV Spreadsheet</option>
+                                    <option *ngIf="activeTab !== 'MT940 / BAI2 Export'">Excel Data</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-gold full-width">Generate Delivery</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
